@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Test</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="moment.min.js"></script>
+  <script src="resize.js"></script>
+  <script src="resize-translation.js"></script>
+
+  <style>
+  #rParent {
+    /*padding: 0 10px;*/
+    width: 800px;
+    /*position: absolute;*/
+    left: 0;
+    border: 1px solid blue;
+    margin: 0;
+    padding: 0;
+  }
+  .rContainer {
+    margin: 20px 0;
+    background: teal;
+    /*padding: 10px;*/
+    position: relative;
+    -moz-box-sizing border-box;
+    -webkit-box-sizing border-box;
+    box-sizing border-box;
+  }
+  
+  .lHandle {
+    width: 10px;
+    height: 100%;
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .rHandle {
+    width: 10px;
+    height: 100%;
+    background: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+        
+  </style>
+</head>
+<body>  
+  <div id="rParent">
+    <div class="rContainer">Testing this content </div>
+    <div class="rContainer">Testing this content </div>
+    <div class="rContainer">Testing this content </div>
+    <div class="rContainer">Testing this content </div>
+  </div>
+  
+  <script>
+  $(document).ready(function() {
+    $('#rParent').jResize();
+  });
+  </script>
+</body>
+</html>
