@@ -1,0 +1,42 @@
+Notes:
+
+Global variables:
+  window.$parent
+  window.days = 131
+  window.dayWidth
+  window.handleWidth = 0
+  window.$tooltip
+
+Can these be passed in an object?
+
+showTooltip ( rHtooltip)
+  - param for which tooltip to show
+
+addTooltip - redo to be createTooltip( rHtooltip )
+  - creates a tooltip
+  - adding a class for the appropriate handle.
+  
+Does showTooltip/addTooltip call date functions?
+  - do I want to calculate the date stuff in a separate function?
+  - or natively in the 
+  
+  
+rHandleBind
+  - mousedown
+    - set variables for container location. could this be a function?
+      - positionInit( event ) 
+        - called for both? returns an object? with variables containing
+        - container widths, handle location / offsets, etc.
+      - dateInit()
+        - calculates the dates startDate, rtRange date, allocationDuration
+      - dateShow()
+      
+  - mousemove
+    - drag( event, whoCalledMe ) 
+      - not sure if two separate functions? dragLeft(event), dragRight(event)
+      - drag will call dateInit(), and dateShow() / tooltipShow()
+      
+  - mouseup
+   - snapToDate()
+
+
