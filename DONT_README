@@ -21,7 +21,7 @@ Does showTooltip/addTooltip call date functions?
   - or natively in the 
   
   
-rHandleBind
+rHandleBind / lHandleBind
   - mousedown
     - set variables for container location. could this be a function?
       - positionInit( event ) 
@@ -38,5 +38,7 @@ rHandleBind
       
   - mouseup
    - snapToDate()
+   
+   
 
 

@@ -18,9 +18,6 @@
       
   $.fn.jResize = function( options ) {
 
-    var settings = $.extend( { //I'd like to be able to define / overwrite some settings, class names for handles etc.
-
-    }, options);
     return this.each(function() {
 
       // parent is the same for all, YET
@@ -109,16 +106,16 @@
       $(document).bind('mouseup.resize', function(v) {  // acting on doc level, when bound to parent, didn't work smoothly.
         $(document).unbind('.resize');
         
-        var containerNewWidth = $container.outerWidth();
-                newWidth = Math.round(Math.round((containerNewWidth)/dayWidth) * dayWidth);
+        // GOOD var containerNewWidth = $container.outerWidth();
+                // GOOD newWidth = Math.round(Math.round((containerNewWidth)/dayWidth) * dayWidth);
                 //var newWidth = $parent.width() - newLeft;
                 
                 //var rtContainerEdge = $container.position().left + containerNewWidth;
                 //var newWidth = rtContainerEdge - newLeft;
                 
-                console.log(newWidth);
+                // GOOD console.log(newWidth);
                 
-                $container.css('width', newWidth);
+                // GOOD $container.css('width', newWidth);
                 
         // tooltip hide/dates mostly for dev.
         $tooltip//.hide()
@@ -213,8 +210,8 @@
         $(document).unbind('.resize');
         
         // snap logic on mouse release, round and reset the left and width
-                 var left = $container.css('left');
-                 var containerNewWidth = $container.outerWidth();
+                 // GOOD var left = $container.css('left');
+                 // GOOD var containerNewWidth = $container.outerWidth();
                  //var newWidth = Math.round((containerNewWidth)/dayWidth) * dayWidth; // something is funky here.
                  //var newLeft = Math.round(parseInt($container.css('left'), 10)/dayWidth) * dayWidth;
                  
@@ -227,7 +224,7 @@
                  // width and left.
                  
                  //var newLeft = Math.round(Math.round(parseFloat($container.css('left'), 10)/dayWidth) * dayWidth);
-                 var newLeft = Math.round(Math.round(parseFloat($container.css('left'), 10)/dayWidth) * dayWidth);
+                 // GOOD var newLeft = Math.round(Math.round(parseFloat($container.css('left'), 10)/dayWidth) * dayWidth);
                  // newWidth
                  // determine the right edge of the container on mouse release.
                  // subtract the newLeft amount from that amount
@@ -235,29 +232,31 @@
                  // This assures there is no pixel fluctuation on the right side
                  // fixing the width respective of the end date selected.
                  
-                 var rtContainerEdge = $container.position().left + containerNewWidth;
+                 // GOOD var rtContainerEdge = $container.position().left + containerNewWidth;
                  
                  // finding the newly sized to right edge of the container
                  // subtracting the rounded / snapped left value, and subtracting it from that rt edge location
                  // adjusting for the width of the left border, as $container.position().left gives a position that 
                  // included the left border NOT zero. And we want to reset that to zero.
                  
-                 var newWidth = rtContainerEdge - newLeft - parseInt(parentLftBorderWidth, 10); 
-                 console.log('parentLftBorderWidth: ' + parseInt(parentLftBorderWidth, 10));
+                 // GOOD var newWidth = rtContainerEdge - newLeft - parseInt(parentLftBorderWidth, 10); 
+                 // GOOD console.log('parentLftBorderWidth: ' + parseInt(parentLftBorderWidth, 10));
                  // var newWidth = $parent.width() - newLeft;
                  //var newWidth = containerNewWidth - (left - newLeft);
                  
-                 console.log("newLeft: " + newLeft + " rtContainerEdge: " + rtContainerEdge + " $parent.width()" + $parent.width() + "Round portion of newLeft: " + Math.round(parseFloat($container.css('left'), 10)/dayWidth));
+                 // GOOD console.log("newLeft: " + newLeft + " rtContainerEdge: " + rtContainerEdge + " $parent.width()" + $parent.width() + "Round portion of newLeft: " + Math.round(parseFloat($container.css('left'), 10)/dayWidth));
                  
-                 if (newWidth === 0) {
-                   newWidth = handleWidth*2;
-                   newLeft = newLeft - newWidth;
-                   console.log('in if newWidth: ' + handleWidth + 'newLeft: ' + newLeft);
-                 }
-                 $container.css({
-                   'left': newLeft,
-                   'width': newWidth
-                 });       
+                 // GOOD
+                 // if (newWidth === 0) {
+                 //   newWidth = handleWidth*2;
+                 //   newLeft = newLeft - newWidth;
+                 //   console.log('in if newWidth: ' + handleWidth + 'newLeft: ' + newLeft);
+                 // }
+                 // $container.css({
+                 //   'left': newLeft,
+                 //   'width': newWidth
+                 // });  
+                 // END GOOD     
                  
         // always showing tooltip for dev.
         $tooltip//.hide()

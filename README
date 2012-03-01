@@ -1,1 +1,1 @@
-Clean up of code. Fixing a resize code block to be a plugin.  Converting to CoffeeScript.
+Code clean-up. Refactoring a currently non-working resize plugin.  Converting to CoffeeScript.
